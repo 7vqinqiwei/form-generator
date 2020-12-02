@@ -3,10 +3,10 @@
     <div class="left-board">
       <div class="logo-wrapper">
         <div class="logo">
-          <img :src="logo" alt="logo"> Form Generator
-          <a class="github" href="https://github.com/JakHuang/form-generator" target="_blank">
+          <img :src="logo" alt="logo"> Atoum Form Builder
+          <!-- <a class="github" href="https://github.com/JakHuang/form-generator" target="_blank">
             <img src="https://github.githubassets.com/pinned-octocat.svg" alt>
-          </a>
+          </a> -->
         </div>
       </div>
       <el-scrollbar class="left-scrollbar">

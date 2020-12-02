@@ -990,6 +990,9 @@ export default {
     height: 100%;
   }
 }
+.el-form-item {
+  margin-bottom: 5px;
+}
 .select-item {
   display: flex;
   border: 1px dashed #fff;
