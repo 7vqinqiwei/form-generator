@@ -2,7 +2,7 @@
 export const formConf = {
   formRef: 'elForm',
   formModel: 'formData',
-  size: 'medium',
+  size: 'mini',
   labelPosition: 'right',
   labelWidth: 100,
   formRules: 'rules',
@@ -24,7 +24,7 @@ export const inputComponents = [
       tag: 'el-input',
       tagIcon: 'input',
       defaultValue: undefined,
-      required: true,
+      required: false,
       layout: 'colFormItem',
       span: 24,
       document: 'https://element.eleme.cn/#/zh-CN/component/input',
@@ -55,7 +55,7 @@ export const inputComponents = [
       tag: 'el-input',
       tagIcon: 'textarea',
       defaultValue: undefined,
-      required: true,
+      required: false,
       layout: 'colFormItem',
       span: 24,
       regList: [],
@@ -115,7 +115,7 @@ export const inputComponents = [
       defaultValue: undefined,
       span: 24,
       layout: 'colFormItem',
-      required: true,
+      required: false,
       regList: [],
       document: 'https://element.eleme.cn/#/zh-CN/component/input-number'
     },
@@ -176,7 +176,7 @@ export const selectComponents = [
     },
     placeholder: '请选择',
     style: { width: '100%' },
-    clearable: true,
+    clearable: false,
     disabled: false,
     filterable: false,
     multiple: false
@@ -240,7 +240,7 @@ export const selectComponents = [
       span: 24,
       optionType: 'default',
       regList: [],
-      required: true,
+      required: false,
       border: false,
       document: 'https://element.eleme.cn/#/zh-CN/component/radio'
     },
@@ -299,7 +299,7 @@ export const selectComponents = [
       showLabel: true,
       labelWidth: null,
       layout: 'colFormItem',
-      required: true,
+      required: false,
       regList: [],
       changeTag: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/switch'
@@ -323,7 +323,7 @@ export const selectComponents = [
       showLabel: true,
       layout: 'colFormItem',
       labelWidth: null,
-      required: true,
+      required: false,
       regList: [],
       changeTag: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/slider'
@@ -345,7 +345,7 @@ export const selectComponents = [
       showLabel: true,
       layout: 'colFormItem',
       labelWidth: null,
-      required: true,
+      required: false,
       regList: [],
       changeTag: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/time-picker'
@@ -370,7 +370,7 @@ export const selectComponents = [
       labelWidth: null,
       layout: 'colFormItem',
       defaultValue: null,
-      required: true,
+      required: false,
       regList: [],
       changeTag: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/time-picker'
@@ -395,7 +395,7 @@ export const selectComponents = [
       labelWidth: null,
       span: 24,
       layout: 'colFormItem',
-      required: true,
+      required: false,
       regList: [],
       changeTag: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/date-picker'
@@ -445,7 +445,7 @@ export const selectComponents = [
       showLabel: true,
       labelWidth: null,
       layout: 'colFormItem',
-      required: true,
+      required: false,
       regList: [],
       changeTag: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/rate'
@@ -467,7 +467,7 @@ export const selectComponents = [
       showLabel: true,
       labelWidth: null,
       layout: 'colFormItem',
-      required: true,
+      required: false,
       regList: [],
       changeTag: true,
       document: 'https://element.eleme.cn/#/zh-CN/component/color-picker'
@@ -486,7 +486,7 @@ export const selectComponents = [
       defaultValue: null,
       showLabel: true,
       labelWidth: null,
-      required: true,
+      required: false,
       span: 24,
       showTip: false,
       buttonText: '点击上传',
