@@ -11,7 +11,7 @@
       <el-scrollbar class="right-scrollbar">
         <!-- 组件属性 -->
         <el-form v-show="currentTab==='field' && showField" size="small" label-width="90px">
-          <el-form-item v-if="activeData.__config__.changeTag" label="组件类型">
+          <el-form-item v-if="activeData && activeData.__config__ &&activeData.__config__.changeTag" label="组件类型">
             <el-select
               v-model="activeData.__config__.tagIcon"
               placeholder="请选择组件类型"
@@ -775,10 +775,10 @@ export default {
   },
   computed: {
     documentLink() {
-      return (
-        this.activeData.__config__.document
-        || 'https://element.eleme.cn/#/zh-CN/component/installation'
-      )
+      if (this.activeData.__config__.document) {
+        return this.activeData.__config__.document
+      }
+      return 'https://element.eleme.cn/#/zh-CN/component/installation'
     },
     dateOptions() {
       if (

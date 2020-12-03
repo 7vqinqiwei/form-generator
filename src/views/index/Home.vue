@@ -176,7 +176,7 @@ export default {
       selectComponents,
       layoutComponents,
       labelWidth: 100,
-      drawingList: drawingDefalut,
+      drawingList: [],
       drawingData: {},
       activeId: drawingDefalut[0].formId,
       drawerVisible: false,
@@ -185,7 +185,12 @@ export default {
       jsonDrawerVisible: false,
       generateConf: null,
       showFileName: false,
-      activeData: drawingDefalut[0],
+      activeData: {
+        __config__: {
+          id: undefined
+        },
+        __vModel__: undefined
+      },
       saveDrawingListDebounce: debounce(340, saveDrawingList),
       saveIdGlobalDebounce: debounce(340, saveIdGlobal),
       leftComponents: [
@@ -242,9 +247,11 @@ export default {
     if (Array.isArray(drawingListInDB) && drawingListInDB.length > 0) {
       this.drawingList = drawingListInDB
     } else {
-      this.drawingList = drawingDefalut
+      this.drawingList = []
     }
-    this.activeFormItem(this.drawingList[0])
+    if (this.drawingList.length > 0) {
+      this.activeFormItem(this.drawingList[0])
+    }
     if (formConfInDB) {
       this.formConf = formConfInDB
     }
