@@ -143,6 +143,7 @@ export default {
       }
     })
     clipboard.on('error', e => {
+      console.log('代码复制失败-：', e)
       this.$message.error('代码复制失败')
     })
   },
@@ -234,7 +235,6 @@ export default {
               links: this.links
             }
           }
-
           this.$refs.previewPage.contentWindow.postMessage(
             postData,
             location.origin

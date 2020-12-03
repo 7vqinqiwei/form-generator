@@ -41,6 +41,16 @@ function init(event) {
     } else {
       newVue(attrs, code.js, code.html)
     }
+  } else {
+    console.log('当前页面已刷新-关闭当前抽屉')
+    // 关闭当前窗口
+    if (this.frameElement) {
+      if (this.frameElement.previousSibling && this.frameElement.previousSibling.lastChild) {
+        if (this.frameElement.previousSibling.lastChild.className.indexOf('delete-btn') > -1) {
+          this.frameElement.previousSibling.lastChild.click()
+        }
+      }
+    }
   }
 }
 
