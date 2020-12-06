@@ -79,15 +79,19 @@ function formBtns(h) {
 }
 
 function renderFormItem(h, elementList) {
-  return elementList.map(scheme => {
-    const config = scheme.__config__
-    const layout = layouts[config.layout]
+  try {
+    return elementList.map(scheme => {
+      const config = scheme.__config__
+      const layout = layouts[config.layout]
 
-    if (layout) {
-      return layout.call(this, h, scheme)
-    }
-    throw new Error(`没有与${config.layout}匹配的layout`)
-  })
+      if (layout) {
+        return layout.call(this, h, scheme)
+      }
+      throw new Error(`没有与${config.layout}匹配的layout`)
+    })
+  } catch (error) {
+    throw new Error('没有定义表单layout')
+  }
 }
 
 function renderChildren(h, scheme) {
@@ -138,6 +142,7 @@ export default {
   },
   methods: {
     initFormData(componentList, formData) {
+      if (!componentList) return
       componentList.forEach(cur => {
         const config = cur.__config__
         if (cur.__vModel__) formData[cur.__vModel__] = config.defaultValue
@@ -145,6 +150,7 @@ export default {
       })
     },
     buildRules(componentList, rules) {
+      if (!componentList) return
       componentList.forEach(cur => {
         const config = cur.__config__
         if (Array.isArray(config.regList)) {

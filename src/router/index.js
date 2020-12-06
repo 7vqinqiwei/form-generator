@@ -19,6 +19,11 @@ const routes = [
     path: '/tinymce',
     name: 'tinymce',
     component: () => import(/* webpackChunkName: "tinymce-example" */'@/components/tinymce/example/Index.vue')
+  },
+  {
+    path: '/runForm',
+    name: 'runForm',
+    component: () => import(/* webpackChunkName: "run-form" */'@/components/parser/example/runForm.vue')
   }
 ]
 
