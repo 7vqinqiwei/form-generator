@@ -325,6 +325,12 @@ export default {
       }
     },
     addComponent(item) {
+      // 配置click是否可以生成控件
+      const clickable = true
+      if (clickable) {
+        // TODO
+        return
+      }
       const clone = this.cloneComponent(item)
       this.fetchData(clone)
       this.drawingList.push(clone)
@@ -344,7 +350,8 @@ export default {
       config.formId = ++this.idGlobal
       config.renderKey = `${config.formId}${+new Date()}` // 改变renderKey后可以实现强制更新组件
       if (config.layout === 'colFormItem') {
-        item.__vModel__ = `field${this.idGlobal}`
+        const now = new Date().getTime()
+        item.__vModel__ = `field${+new Date().getTime()}`
       } else if (config.layout === 'rowFormItem') {
         config.componentName = `row${this.idGlobal}`
         !Array.isArray(config.children) && (config.children = [])
