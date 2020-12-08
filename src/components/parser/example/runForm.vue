@@ -1,7 +1,7 @@
 <template>
   <div class="test-form">
     <div v-if="loaded">
-      <parser :form-conf="formConf" @submit="sumbitForm" />
+      <parser :form-conf="formConf" :submit-loading="submitLoading" @submit="sumbitForm" />
     </div>
   </div>
 </template>
@@ -20,15 +20,13 @@ export default {
   data() {
     return {
       loaded: false, // 只会加载一次json实体注意开启顺序
-      formConf: {}
+      formConf: {},
+      submitLoading: false
     }
   },
   computed: {},
   watch: {},
   created() {
-    console.log('创建')
-  },
-  mounted() {
     // 异步请求表单定义json数据或者高级模式HTML/script/css所有的定义
     const mockThis = this
     this.$axios.get('/api/biz/model/form/get?id=1').then(resp => {
@@ -37,6 +35,8 @@ export default {
     }).catch(err => {
       console.log(err)
     })
+  },
+  mounted() {
     setTimeout(() => {
       // 表单数据回填，模拟异步请求场景
       // 请求回来的表单数据
@@ -57,10 +57,14 @@ export default {
     },
     sumbitForm(data) {
       console.log('sumbitForm提交数据：', data)
+      this.submitLoading = true
       this.$axios.post('/api/biz/model/form/save', data).then(resp => {
         console.log(resp)
+        this.submitLoading = false
+        // TODO 是跳转还是流转
       }).catch(err => {
         console.log(err)
+        this.submitLoading = false
       })
     }
   }

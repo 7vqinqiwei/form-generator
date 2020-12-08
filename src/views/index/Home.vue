@@ -351,7 +351,8 @@ export default {
       config.renderKey = `${config.formId}${+new Date()}` // 改变renderKey后可以实现强制更新组件
       if (config.layout === 'colFormItem') {
         const now = new Date().getTime()
-        item.__vModel__ = `field${+new Date().getTime()}`
+        // TODO优化生成全局唯一ID的问题
+        item.__vModel__ = `f_${+new Date().getTime()}`
       } else if (config.layout === 'rowFormItem') {
         config.componentName = `row${this.idGlobal}`
         !Array.isArray(config.children) && (config.children = [])
