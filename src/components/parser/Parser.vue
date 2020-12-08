@@ -87,7 +87,9 @@ function renderFormItem(h, elementList) {
       if (layout) {
         return layout.call(this, h, scheme)
       }
-      throw new Error(`没有与${config.layout}匹配的layout`)
+      // throw new Error(`没有与${config.layout}匹配的layout`)
+      console.log(`没有与${config.layout}匹配的layout`)
+      return false
     })
   } catch (error) {
     throw new Error('没有定义表单layout')
