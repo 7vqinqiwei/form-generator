@@ -1,3 +1,4 @@
+// 默认展示的控件
 export default [
   {
     __config__: {

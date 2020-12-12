@@ -44,6 +44,9 @@
 
     <div class="center-board">
       <div class="action-bar">
+        <el-button icon="el-icon-video-play" type="text" @click="save">
+          保存
+        </el-button>
         <el-button icon="el-icon-video-play" type="text" @click="run">
           运行
         </el-button>
@@ -420,6 +423,16 @@ export default {
     showJson() {
       this.AssembleFormData()
       this.jsonDrawerVisible = true
+    },
+    save() {
+      this.AssembleFormData()
+      const reqObj = {
+        id: '1',
+        draftViewJson: JSON.stringify(this.formData)
+      }
+      this.$axios.post('/api/biz/model/form/save', reqObj).then(resp => {
+        console.log('NNNN')
+      })
     },
     download() {
       this.dialogVisible = true

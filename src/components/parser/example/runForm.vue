@@ -58,7 +58,7 @@ export default {
     sumbitForm(data) {
       console.log('sumbitForm提交数据：', data)
       this.submitLoading = true
-      this.$axios.post('/api/biz/model/form/save', data).then(resp => {
+      this.$axios.post('/api/biz/model/form/runtime/save', data).then(resp => {
         console.log(resp)
         this.submitLoading = false
         // TODO 是跳转还是流转
