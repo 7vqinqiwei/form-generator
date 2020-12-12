@@ -6,10 +6,14 @@ import '@/icons'
 import axios from 'axios'
 import Tinymce from '@/components/tinymce/index.vue'
 
+import config from '../../../package.json'
+
 Vue.component('tinymce', Tinymce)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
+
+Vue.prototype.appVersion = config.version
 
 new Vue({
   router,

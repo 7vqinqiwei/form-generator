@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :title="appVersion">
     <div class="left-board">
       <div class="logo-wrapper">
         <div class="logo">
@@ -425,13 +425,22 @@ export default {
       this.jsonDrawerVisible = true
     },
     save() {
+      // TODO 嵌入到工具了
       this.AssembleFormData()
+      const reqFormData = Object.assign(this.formData, { id: undefined })
+      if (reqFormData.fields && Array.isArray(reqFormData.fields)) {
+        reqFormData.fields.forEach(item => {
+          if (item.__config__) {
+            delete item.__config__.document
+          }
+        })
+      }
       const reqObj = {
         id: '1',
         draftViewJson: JSON.stringify(this.formData)
       }
       this.$axios.post('/api/biz/model/form/save', reqObj).then(resp => {
-        console.log('NNNN')
+        console.log('')
       })
     },
     download() {
