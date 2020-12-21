@@ -335,56 +335,57 @@ export const selectComponents = [
     'show-stops': false,
     range: false
   },
-  {
-    __config__: {
-      label: '时间选择',
-      tag: 'el-time-picker',
-      tagIcon: 'time',
-      defaultValue: null,
-      span: 24,
-      showLabel: true,
-      layout: 'colFormItem',
-      labelWidth: null,
-      required: false,
-      regList: [],
-      changeTag: true,
-      document: 'https://element.eleme.cn/#/zh-CN/component/time-picker'
-    },
-    placeholder: '请选择',
-    style: { width: '100%' },
-    disabled: false,
-    clearable: true,
-    'picker-options': {
-      selectableRange: '00:00:00-23:59:59'
-    },
-    format: 'HH:mm:ss',
-    'value-format': 'HH:mm:ss'
-  },
-  {
-    __config__: {
-      label: '时间范围',
-      tag: 'el-time-picker',
-      tagIcon: 'time-range',
-      span: 24,
-      showLabel: true,
-      labelWidth: null,
-      layout: 'colFormItem',
-      defaultValue: null,
-      required: false,
-      regList: [],
-      changeTag: true,
-      document: 'https://element.eleme.cn/#/zh-CN/component/time-picker'
-    },
-    style: { width: '100%' },
-    disabled: false,
-    clearable: true,
-    'is-range': true,
-    'range-separator': '至',
-    'start-placeholder': '开始时间',
-    'end-placeholder': '结束时间',
-    format: 'HH:mm:ss',
-    'value-format': 'HH:mm:ss'
-  },
+  // {
+  //   __config__: {
+  //     label: '时间选择',
+  //     tag: 'el-time-picker',
+  //     tagIcon: 'time',
+  //     defaultValue: null,
+  //     span: 24,
+  //     showLabel: true,
+  //     layout: 'colFormItem',
+  //     labelWidth: null,
+  //     required: false,
+  //     regList: [],
+  //     changeTag: true,
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/time-picker'
+  //   },
+  //   placeholder: '请选择',
+  //   style: { width: '100%' },
+  //   disabled: false,
+  //   clearable: true,
+  //   'picker-options': {
+  //     selectableRange: '00:00:00-23:59:59'
+  //   },
+  //   format: 'HH:mm:ss',
+  //   'value-format': 'HH:mm:ss'
+
+  // },
+  // {
+  //   __config__: {
+  //     label: '时间范围',
+  //     tag: 'el-time-picker',
+  //     tagIcon: 'time-range',
+  //     span: 24,
+  //     showLabel: true,
+  //     labelWidth: null,
+  //     layout: 'colFormItem',
+  //     defaultValue: null,
+  //     required: false,
+  //     regList: [],
+  //     changeTag: true,
+  //     document: 'https://element.eleme.cn/#/zh-CN/component/time-picker'
+  //   },
+  //   style: { width: '100%' },
+  //   disabled: false,
+  //   clearable: true,
+  //   'is-range': true,
+  //   'range-separator': '至',
+  //   'start-placeholder': '开始时间',
+  //   'end-placeholder': '结束时间',
+  //   format: 'HH:mm:ss',
+  //   'value-format': 'HH:mm:ss'
+  // },
   {
     __config__: {
       label: '日期选择',
