@@ -437,7 +437,8 @@ export default {
       }
       const reqObj = {
         id: '1',
-        draftViewJson: JSON.stringify(this.formData)
+        draftViewJson: JSON.stringify(this.formData),
+        appPieceId: '297e61d1761c03dd01761c08927f0000'
       }
       this.$axios.post('/api/biz/model/form/save', reqObj).then(resp => {
         console.log('')
